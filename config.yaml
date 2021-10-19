@@ -1,27 +1,27 @@
 baseURL: https://clairezhang.netlify.app/
 languageCode: en-us
-title: Forty
+title: Cliare's Portfolio
 theme: forty
 googleAnalytics: ''
 disqusShortname: ''
 params:
   banner:
     buttonText: Get Started
-    subtitle: |-
-      A RESPONSIVE SITE TEMPLATE DESIGNED BY HTML5 UP
-      AND RELEASED UNDER THE CREATIVE COMMONS.
-    title: Hi, my name is Claire Zhang
+    #subtitle: |-
+    #  A RESPONSIVE SITE TEMPLATE DESIGNED BY HTML5 UP
+    #  AND RELEASED UNDER THE CREATIVE COMMONS.
+    title: Hi, my name is Claire Zhang, am a first-year MFA student at London Business School. Welcome to my website!
   blog: {}
   contact:
     address:
-      - city: City, ST 00000
-        country: Country
-        street: Street
+      - city: London
+        country: United Kingdom
+        street: Park Road
         title: Address
     buttonClear: Clear
     buttonSend: Send message
     email:
-      - email: example@domain.com
+      - email: clairezhang22@outlook.com
         title: Email
     enable: yes
     phone:
@@ -35,30 +35,30 @@ params:
     text: Please visit [this page](/)
   favicon: favicon.ico
   footer:
-    copyright: Company Name
+    copyright: ClaireZhang
     enable: yes
     quicklinks:
       - alt: HTML5 UP
         text: 'Design: '
         url: https://www.html5up.net
     social:
-      - icon: fa-twitter
-        label: Twitter
-        url: https://www.twitter.com
+     # - icon: fa-twitter
+    #    label: Twitter
+     #   url: https://www.twitter.com
       - icon: fa-facebook
         label: Facebook
-        url: https://www.facebook.com
+        url: https://www.facebook.com/profile.php?id=100004821061044
       - icon: fa-instagram
         label: Instagram
-        url: https://www.instagram.com
+        url: https://www.instagram.com/clairrre__/
       - icon: fa-github
         label: GitHub
-        url: https://www.github.com
+        url: https://github.com/clairezhang22
       - icon: fa-linkedin
         label: LinkedIn
-        url: https://www.linkedin.com
+        url: https://www.linkedin.com/in/clairezhanghanwen/
   image: ''
-  name: Your name
+  name: Claire Zhang
   navigation:
     button1:
       - name: Get Started
@@ -71,17 +71,17 @@ params:
         url: '#'
       - name: Blogs
         url: blogs
-      - name: Generic Blog
-        url: blogs/ipsum
-      - name: Elements
-        url: elements.html
+      #- name: Generic Blog
+      #  url: blogs/ipsum
+      #- name: Elements
+      #  url: elements.html
     menu: Menu
     subtitle: By HTML5 Up
     title: Forty
   tiles:
     enable: yes
     showcase:
-      - image: pic01.jpg
+      - image: lbs.jpeg
         subtitle: Ipsum Dolor Sit Amet
         title: Aliquam
         url: blogs/aliquam
