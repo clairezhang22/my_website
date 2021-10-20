@@ -113,7 +113,7 @@ geom_ribbon(
     aes(ymax=0, ymin=down+0),fill=&quot;#CB454A&quot;
   )+
 geom_rug(aes(colour=ifelse(ten_year&gt;=three_month,&quot;&gt;=0&quot;,&quot;&lt;0&quot;)),sides=&quot;b&quot;)+
-  scale_colour_manual(values=c(&quot;#CB454A&quot;,&quot;light blue&quot;), guide=FALSE)+
+  scale_colour_manual(values=c(&quot;#CB454A&quot;,&quot;light blue&quot;), guide=&quot;none&quot;)+
    annotate(&quot;rect&quot;, fill = &quot;grey&quot;, alpha = 0.5, 
         xmin =recessions_new$From, xmax = recessions_new$To,
         ymin = -Inf, ymax = Inf)
