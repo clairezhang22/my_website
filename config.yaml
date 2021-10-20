@@ -82,13 +82,13 @@ params:
     enable: yes
     showcase:
       - image: lbs.jpg
-        subtitle: Ipsum Dolor Sit Amet
-        title: Aliquam
+        #subtitle: Ipsum Dolor Sit Amet
+        title: Biography
         url: blogs/claire_intro
-      - image: pic02.jpg
-        subtitle: Feugiat Amet Tempus
-        title: Tempus
-        url: blogs/tempus
+      - image:yield_curve.jpeg
+        #subtitle: Feugiat Amet Tempus
+        title: Yield Curve Analysis
+        url: blogs/yield_curve
       - image: pic03.jpg
         subtitle: Lorem Etiam Nullam
         title: Magna

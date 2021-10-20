@@ -1,0 +1,126 @@
+---
+categories:  
+- ""    #the front matter should be like the one found in, e.g., blog2.md. It cannot be like the normal Rmd we used
+- ""
+date: "2021-10-20"
+description: Yield Curve Graph # the title that will show up once someone gets to this page
+draft: false
+image: yield_curve.jpeg # save picture in \static\img\blogs. Acceptable formats= jpg, jpeg, or png . Your iPhone pics wont work
+
+keywords: ""
+slug: yield_curve # slug is the shorthand URL address... no spaces plz
+title: Yield Curve
+---
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<div id="yield-curve-project" class="section level1">
+<h1>Yield Curve Project</h1>
+<p>This is one of the the several challenging projects I worked on. Yield curve is an important graph that highly related to the financial markets. Now I will walk you through what my teammates and I have worked on for this project.</p>
+<p>First, we will load the yield curve data file that contains data on the yield curve since 1960-01-01</p>
+<p>First, we will load the yield curve data file that contains data on the yield curve since 1960-01-01</p>
+<pre class="r"><code>yield_curve &lt;- read_csv(here::here(&quot;data&quot;, &quot;yield_curve.csv&quot;))
+
+glimpse(yield_curve)</code></pre>
+<pre><code>## Rows: 6,884
+## Columns: 5
+## $ date      &lt;date&gt; 1960-01-01, 1960-02-01, 1960-03-01, 1960-04-01, 1960-05-01,…
+## $ series_id &lt;chr&gt; &quot;TB3MS&quot;, &quot;TB3MS&quot;, &quot;TB3MS&quot;, &quot;TB3MS&quot;, &quot;TB3MS&quot;, &quot;TB3MS&quot;, &quot;TB3MS…
+## $ value     &lt;dbl&gt; 4.35, 3.96, 3.31, 3.23, 3.29, 2.46, 2.30, 2.30, 2.48, 2.30, …
+## $ maturity  &lt;chr&gt; &quot;3m&quot;, &quot;3m&quot;, &quot;3m&quot;, &quot;3m&quot;, &quot;3m&quot;, &quot;3m&quot;, &quot;3m&quot;, &quot;3m&quot;, &quot;3m&quot;, &quot;3m&quot;, …
+## $ duration  &lt;chr&gt; &quot;3-Month Treasury Bill&quot;, &quot;3-Month Treasury Bill&quot;, &quot;3-Month T…</code></pre>
+<p>Our dataframe <code>yield_curve</code> has five columns (variables):</p>
+<ul>
+<li><code>date</code>: already a date object</li>
+<li><code>series_id</code>: the FRED database ticker symbol</li>
+<li><code>value</code>: the actual yield on that date</li>
+<li><code>maturity</code>: a short hand for the maturity of the bond</li>
+<li><code>duration</code>: the duration, written out in all its glory!</li>
+</ul>
+<div id="plotting-the-yield-curve" class="section level2">
+<h2>Plotting the yield curve</h2>
+<div id="yields-on-us-rates-by-duration-since-1960" class="section level3">
+<h3>Yields on US rates by duration since 1960</h3>
+<p>Different duration can impact the trend and the specific value of the yield curve. We thought it will be interesting to graph yields by different duration since 1960 and see the trend.</p>
+<p><img src="/blogs/yield_curve_files/figure-html/yield_curve_1-1.png" width="100%" style="display: block; margin: auto;" /></p>
+</div>
+<div id="month-and-10-year-yields-since-1999" class="section level3">
+<h3>3-month and 10-year yields since 1999</h3>
+<p>According to <a href="https://en.wikipedia.org/wiki/List_of_recessions_in_the_United_States">Wikipedia’s list of recession in the United States</a>, since 1999 there have been two recession in the US: between Mar 2001–Nov 2001 and between Dec 2007–June 2009. We would like to explore if the yield curve seem to flatten before these recessions and when the short-term (3 months) yield more than longer term (10 years) debt. Now we are going to focus on the 3 months and 10 years yield curve.</p>
+<p>To start with, we can see a general trend of Yields on 3-month and 10-year US Treasury rates since 1999 from the graph below:</p>
+<p><img src="/blogs/yield_curve_files/figure-html/yield_curve_3-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p>Then, we are going to identify the periods with recession and some data wrangling can help us with it. I would like to show you some behind scene work, which are some codes, first.</p>
+<pre class="r"><code># get US recession dates after 1946 from Wikipedia 
+# https://en.wikipedia.org/wiki/List_of_recessions_in_the_United_States
+
+recessions &lt;- tibble(
+  from = c(&quot;1948-11-01&quot;, &quot;1953-07-01&quot;, &quot;1957-08-01&quot;, &quot;1960-04-01&quot;, &quot;1969-12-01&quot;, &quot;1973-11-01&quot;, &quot;1980-01-01&quot;,&quot;1981-07-01&quot;, &quot;1990-07-01&quot;, &quot;2001-03-01&quot;, &quot;2007-12-01&quot;,&quot;2020-02-01&quot;),  
+  to = c(&quot;1949-10-01&quot;, &quot;1954-05-01&quot;, &quot;1958-04-01&quot;, &quot;1961-02-01&quot;, &quot;1970-11-01&quot;, &quot;1975-03-01&quot;, &quot;1980-07-01&quot;, &quot;1982-11-01&quot;, &quot;1991-03-01&quot;, &quot;2001-11-01&quot;, &quot;2009-06-01&quot;, &quot;2020-04-30&quot;) 
+  )  %&gt;% 
+  mutate(From = ymd(from), 
+         To=ymd(to),
+         duration_days = To-From)
+
+
+recessions</code></pre>
+<pre><code>## # A tibble: 12 × 5
+##    from       to         From       To         duration_days
+##    &lt;chr&gt;      &lt;chr&gt;      &lt;date&gt;     &lt;date&gt;     &lt;drtn&gt;       
+##  1 1948-11-01 1949-10-01 1948-11-01 1949-10-01 334 days     
+##  2 1953-07-01 1954-05-01 1953-07-01 1954-05-01 304 days     
+##  3 1957-08-01 1958-04-01 1957-08-01 1958-04-01 243 days     
+##  4 1960-04-01 1961-02-01 1960-04-01 1961-02-01 306 days     
+##  5 1969-12-01 1970-11-01 1969-12-01 1970-11-01 335 days     
+##  6 1973-11-01 1975-03-01 1973-11-01 1975-03-01 485 days     
+##  7 1980-01-01 1980-07-01 1980-01-01 1980-07-01 182 days     
+##  8 1981-07-01 1982-11-01 1981-07-01 1982-11-01 488 days     
+##  9 1990-07-01 1991-03-01 1990-07-01 1991-03-01 243 days     
+## 10 2001-03-01 2001-11-01 2001-03-01 2001-11-01 245 days     
+## 11 2007-12-01 2009-06-01 2007-12-01 2009-06-01 548 days     
+## 12 2020-02-01 2020-04-30 2020-02-01 2020-04-30  89 days</code></pre>
+<pre class="r"><code>recessions_new&lt;- recessions[-c(1,2,3),]</code></pre>
+<p>Now, we are going to produce a graph that shows yield curve inversion:10-year minus 3-month U.S. Treasury rates during different time period.</p>
+<pre class="r"><code>data_final&lt;- yield_curve %&gt;% 
+  filter(maturity == c(&quot;3m&quot;,&quot;10y&quot;)) %&gt;% 
+  select(-series_id,-duration) %&gt;% 
+  pivot_wider(names_from = maturity,values_from = value)
+
+colnames(data_final) &lt;- c( &quot;date&quot;,&quot;three_month&quot;,&quot;ten_year&quot;)
+
+
+data_final&lt;- data_final %&gt;% 
+  mutate(diff = ten_year - three_month)%&gt;% 
+  mutate(
+    up =ifelse(diff&gt;0,diff,0),
+    down =ifelse(diff&lt;0,diff,0)
+  )
+
+
+
+graph_final &lt;- ggplot(data_final,aes(x=date,group=1))+
+  geom_line(aes(y=diff))+
+    theme_bw() +
+  labs (
+    title = &quot;Yield Curve Inversion:10-year minus 3-month U.S. Treasury rates&quot;,
+    subtitle = &quot;difference in % point monthly average. Shaded areas correspond to recessions&quot;,
+    y= &quot;Difference (10 year - 3month) yield in %&quot;,
+    x= &quot;Year&quot;)+
+  geom_ribbon(
+    aes(ymin=0, ymax=up+0), fill=&quot;light blue&quot;
+  )+
+geom_ribbon(
+    aes(ymax=0, ymin=down+0),fill=&quot;#CB454A&quot;
+  )+
+geom_rug(aes(colour=ifelse(ten_year&gt;=three_month,&quot;&gt;=0&quot;,&quot;&lt;0&quot;)),sides=&quot;b&quot;)+
+  scale_colour_manual(values=c(&quot;#CB454A&quot;,&quot;light blue&quot;), guide=FALSE)+
+   annotate(&quot;rect&quot;, fill = &quot;grey&quot;, alpha = 0.5, 
+        xmin =recessions_new$From, xmax = recessions_new$To,
+        ymin = -Inf, ymax = Inf)
+
+graph_final</code></pre>
+<p><img src="/blogs/yield_curve_files/figure-html/curve_final-1.png" width="648" style="display: block; margin: auto;" /></p>
+<p>Thank for reading all the way here! I hope you get some insights.</p>
+</div>
+</div>
+</div>
