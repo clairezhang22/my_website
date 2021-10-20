@@ -1,0 +1,44 @@
+---
+categories:  
+- ""    #the front matter should be like the one found in, e.g., blog2.md. It cannot be like the normal Rmd we used
+- ""
+date: "2021-9-20"
+description: Airbnb # the title that will show up once someone gets to this page
+draft: false
+image: air.jpeg # save picture in \static\img\blogs. Acceptable formats= jpg, jpeg, or png . Your iPhone pics wont work
+
+keywords: ""
+slug: airbnb # slug is the shorthand URL address... no spaces plz
+title: Airbnb Project
+---
+
+# Project Description 
+
+For our final group project, we build a model to forecast the price of an Airbnbs for 2 people to stay for 4 nights. Among all the great cities in the world, we choose to forecast the price of some Airbnbs in Berlin. Please see our step by step analysis below. 
+
+
+```{r a0, echo=FALSE, out.width="100%"}
+
+knitr::include_graphics("/img/a0.png",error =FALSE)
+```
+
+```{r a1, echo=FALSE, out.width="100%"}
+
+knitr::include_graphics("/img/a1.png",error =FALSE)
+```
+
+```{r a2, echo=FALSE, out.width="100%"}
+
+knitr::include_graphics("/img/a2.png",error =FALSE)
+```
+
+
+```{r a3, echo=FALSE, out.width="100%"}
+
+knitr::include_graphics("/img/a3.png",error =FALSE)
+```
+
+```{r a4, echo=FALSE, out.width="100%"}
+
+knitr::include_graphics("/img/a4.png",error =FALSE)
+```

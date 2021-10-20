@@ -93,10 +93,10 @@ params:
         #subtitle: Lorem Etiam Nullam
         title: GDP Analysis
         url: blogs/gdp
-      - image: pic04.jpg
-        subtitle: Nisl Sed Aliquam
-        title: Ipsum
-        url: blogs/ipsum
+      - image: air.jpeg
+        #subtitle: Nisl Sed Aliquam
+        title: Airbnb Project
+        url: blogs/airbnb
       - image: pic05.jpg
         subtitle: Ipsum Dolor Sit Amet
         title: Consequat
