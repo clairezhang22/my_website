@@ -89,10 +89,10 @@ params:
         #subtitle: Feugiat Amet Tempus
         title: Yield Curve Analysis
         url: blogs/yield_curve
-      - image: pic03.jpg
-        subtitle: Lorem Etiam Nullam
-        title: Magna
-        url: blogs/magna
+      - image: gdp.jpeg
+        #subtitle: Lorem Etiam Nullam
+        title: GDP Analysis
+        url: blogs/gdp
       - image: pic04.jpg
         subtitle: Nisl Sed Aliquam
         title: Ipsum

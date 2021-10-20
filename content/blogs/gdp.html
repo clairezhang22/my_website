@@ -1,0 +1,43 @@
+---
+categories:  
+- ""    #the front matter should be like the one found in, e.g., blog2.md. It cannot be like the normal Rmd we used
+- ""
+date: "2021-9-20"
+description: GDP # the title that will show up once someone gets to this page
+draft: false
+image: gdp.jpeg # save picture in \static\img\blogs. Acceptable formats= jpg, jpeg, or png . Your iPhone pics wont work
+
+keywords: ""
+slug: GDP # slug is the shorthand URL address... no spaces plz
+title: GDP Graph
+---
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<p>In this section, we would like to explore some data sets related to GDP.</p>
+<p>First, we load the data.</p>
+<pre class="r"><code>UN_GDP_data  &lt;-  read_excel(here::here(&quot;data&quot;, &quot;gdp_data.xlsx&quot;), # Excel filename
+                sheet=&quot;Download-GDPconstant-USD-countr&quot;, # Sheet name
+                skip=2) # Number of rows to skip</code></pre>
+<pre><code>##  chr &quot;TVA&quot;</code></pre>
+<p>Then, we produce a graph showing GDP components over time.</p>
+<div id="gdp-components-over-time" class="section level1">
+<h1>GDP components over time</h1>
+<p><img src="/blogs/gdp_files/figure-html/graph1-1.png" width="648" style="display: block; margin: auto;" /></p>
+</div>
+<div id="gdp-components-in-three-countries" class="section level1">
+<h1>GDP components in three countries</h1>
+<p>Below is a GDP graph of GDP by country in Germany, India, and the United States.</p>
+<p><img src="/img/gdp2.png" width="100%" style="display: block; margin: auto;" /></p>
+</div>
+<div id="findings" class="section level1">
+<h1>Findings</h1>
+<p>From this chart, we can see different dynamic among these three countries:</p>
+<ul>
+<li><p><strong>Germany</strong>: The majority of the German GDP comes from household expenditures. Capital formation and government expenditure have been quite constant over the time. However, since the year 2000, net exports have been rising and household expenditures have increased.</p></li>
+<li><p><strong>India</strong>: Also in India, most of the GDP comes from the household expenditures. While government expenditure and net exports have been somewhat stable, the gross capital formation increased strongly from 2000 onwards, while the household expenditures decreased.</p></li>
+<li><p><strong>US</strong>: All four components of the GDP look quite stable for the US. Yet, over the given time frame government expenditures have decreased by around 15%, and gross capital formation and household expenditures gained greater significance.</p></li>
+</ul>
+<p>Differences: For all the observed countries, the household expenditures made up for the largest part of the GDP. In the end of the period, in Germany the government expenditures and capital formation where the same while in the US and India capital formation was higher than government expenditures. Germany also has significantly positive net exports, while India and the US had negative net exports.</p>
+</div>
