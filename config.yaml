@@ -25,7 +25,7 @@ params:
         title: Email
     enable: yes
     phone:
-      - phone: (000) 000-0000 x1234
+      - phone: (206) 698-5410
         title: Phone
   custom_css: []
   custom_js: []
@@ -82,25 +82,25 @@ params:
     enable: yes
     showcase:
       - image: lbs.jpg
-        #subtitle: Ipsum Dolor Sit Amet
+        subtitle: About me
         title: Biography
         url: blogs/claire_intro
       - image: yield_curve.jpeg
-        #subtitle: Feugiat Amet Tempus
+        subtitle: R project 1
         title: Yield Curve Analysis
         url: blogs/yield_curve
       - image: gdp.jpeg
-        #subtitle: Lorem Etiam Nullam
+        subtitle: R project 2
         title: GDP Analysis
         url: blogs/gdp
       - image: air.jpeg
-        #subtitle: Nisl Sed Aliquam
+        subtitle: The ultimate group R project
         title: Airbnb Project
         url: blogs/airbnb
-      - image: pic05.jpg
-        subtitle: Ipsum Dolor Sit Amet
-        title: Consequat
-        url: blogs/ipsum
+      - image: finance.jpg
+        subtitle: To learn more about me
+        title: Why Finance?
+        url: blogs/finance
       - image: pic06.jpg
         subtitle: Feugiat Amet Tempus
         title: Etiam

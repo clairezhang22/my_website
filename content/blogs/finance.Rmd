@@ -1,0 +1,39 @@
+---
+categories:  
+- ""    #the front matter should be like the one found in, e.g., blog2.md. It cannot be like the normal Rmd we used
+- ""
+date: "2021-9-20"
+description: Why Finance? # the title that will show up once someone gets to this page
+draft: false
+image: finance.jpeg # save picture in \static\img\blogs. Acceptable formats= jpg, jpeg, or png . Your iPhone pics wont work
+
+keywords: ""
+slug: finance # slug is the shorthand URL address... no spaces plz
+title: Why Finance?
+---
+
+# Introduction
+
+Thanks for viewing my website! As you read in my bio, I am currently a finance student at London Business School. To help you better understand my journey, I would like to share with you more about myself: why I choose to pursue a career in finance? why I choose to study at London Business School. 
+
+## Phase 1: Growing Up
+
+I have always been fascinated with technologies that change our life. While I appreciated the breakthrough offered by technology, as a business student, I became more interested in an indispensable driving force of it– finance. Tesla would have gone bankrupt in 2009 and the leading autonomous electric vehicles would never exist if it were not for funding raised from its IPO. Therefore, I want to engage with financial services and leverage means of finance to serve different needs of market players. 
+
+## Phase 2: During College
+I have completed four internships that have exposed me to different aspects of the　financial services industry. At PricewaterhouseCoopers, I conducted auditing for a regional bank’s IPO. This project familiarized me with the major financing method IPO and sharpened my judgment on financial statements. The Sales & Trading internship at a top Chinese securities firm offered me opportunities to combine fundamental and technical analysis to make trades, which enhanced my sense of market dynamics.
+
+If early experiences were meant to enrich my perspective, the working experience at a Seattle tech startup Catch22Market enabled me to utilize my skills to help build a business from scratch. While I was developing pricing model for our software products targeting small businesses, I realized that it was such a niche market that no competitors had offered the same service. Then I managed to facilitate price referencing for benchmark by examining ten close competitors and surveying over one hundred potential clients. To assess business viability, I built a financial model to forecast future cash flows, which informed the founder of the potential costs before making profits, and it proved useful to convince investors of the long-term profitability of the business. It was so rewarding to see my hard work turning into results: we secured $5,000 funding from Microsoft and three weeks after the product launch, we landed 226 clients. 
+
+## Phase 3: Sparkling
+This experience has taught me the crucial roles investors and capital market play in helping potential enterprises in the TMT sector to grow through strategic capitalization so as to achieve technological, commercial, and social advancement. It drove me to work at a top Seattle wealth management firm as an equity research intern covering technology sector. I aimed to capitalize on my financial analysis work to direct investors’ focus on enterprises worthy of capital injection. Under the guidance of seasoned analysts, I undertook industry research and valuation work, with two pitched companies finally being added to the portfolio. Nevertheless, I realized there is a gap between my experience and that of a sophisticated equity research analyst in terms of analytical depth when probing into certain companies. 
+
+## Phase 4: LBS
+I believe LBS’s MFA core courses on investment fundamentals and analysis of financial statements will equip me with the technical skills to excel as an equity research analyst. Moreover, the cross-program registration in elective courses will allow me to work with people who have much more industry experience and they will be a valuable source for me to learn from. Although business schools and financial industry can be competitive by nature, I have learned about LBS’s supportive community where students help each other during recruitment and alums are always willing to mentor lowerclassmen. I had the pleasure to talk to several LBS alums by cold mailing on LinkedIn. I am highly moved by their enthusiasm to guide prospective students truly interested in LBS and if I can join the LBS community, I will continue the tradition of giving back. My career goal is to pursue an equity research career in Hong Kong after graduation and LBS’s strong presence can be a huge advantage for me. 
+
+
+
+```{r a0, echo=FALSE, out.width="100%"}
+
+knitr::include_graphics("/img/LBS.jpeg",error =FALSE)
+```
