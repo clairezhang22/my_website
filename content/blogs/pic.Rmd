@@ -1,0 +1,57 @@
+---
+categories:  
+- ""    #the front matter should be like the one found in, e.g., blog2.md. It cannot be like the normal Rmd we used
+- ""
+date: "2021-9-20"
+description: Favorite Memories # the title that will show up once someone gets to this page
+draft: false
+image: mmr.jpeg # save picture in \static\img\blogs. Acceptable formats= jpg, jpeg, or png . Your iPhone pics wont work
+
+keywords: ""
+slug: mmr # slug is the shorthand URL address... no spaces plz
+title: Memories
+---
+
+I would like to share with you some of my favorite memories. I hope you enjoy the slide show. 
+
+
+### High School Graduation 
+
+
+```{r a0, echo=FALSE, out.width="100%"}
+
+knitr::include_graphics("/img/0.JPG",error =FALSE)
+```
+
+### Senior Trip to Hawaii 
+
+```{r a1, echo=FALSE, out.width="100%"}
+
+knitr::include_graphics("/img/1.JPG",error =FALSE)
+```
+
+
+### South America
+```{r a2, echo=FALSE, out.width="100%"}
+
+knitr::include_graphics("/img/2.JPG",error =FALSE)
+```
+
+### South America - Bolivia
+```{r a3, echo=FALSE, out.width="100%"}
+
+knitr::include_graphics("/img/3.JPG",error =FALSE)
+```
+
+### My dog - Cookie
+```{r a4, echo=FALSE, out.width="100%"}
+
+knitr::include_graphics("/img/4.JPG",error =FALSE)
+```
+
+
+### First Time in London
+```{r a6, echo=FALSE, out.width="100%"}
+
+knitr::include_graphics("/img/6.JPG",error =FALSE)
+```
