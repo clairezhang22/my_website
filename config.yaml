@@ -10,7 +10,7 @@ params:
     #subtitle: |-
     #  A RESPONSIVE SITE TEMPLATE DESIGNED BY HTML5 UP
     #  AND RELEASED UNDER THE CREATIVE COMMONS.
-    title: Hi, my name is Claire Zhang, am a first-year MFA student at London Business School. Welcome to my website!
+    title: Hi, my name is Claire Zhang. Welcome to my R portfolio website!
   blog: {}
   contact:
     address:
@@ -81,10 +81,10 @@ params:
   tiles:
     enable: yes
     showcase:
-      - image: lbs.jpeg
+      - image: lbs.jpg
         subtitle: Ipsum Dolor Sit Amet
         title: Aliquam
-        url: blogs/aliquam
+        url: blogs/claire_intro
       - image: pic02.jpg
         subtitle: Feugiat Amet Tempus
         title: Tempus
